@@ -1,0 +1,57 @@
+.shell-bg .mantine-AppShell-main {
+  background: transparent;
+}
+
+.brand-mark {
+  letter-spacing: 0.1em;
+  color: #b65a00;
+}
+
+.footer-row {
+  border-top: 1px solid #e8e9ec;
+  color: #6b7280;
+}
+
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #ffe2bf 0%, #ffeedd 25%, #f7f9fe 100%);
+}
+
+.login-card {
+  box-shadow: 0 18px 44px rgba(24, 39, 75, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #d9750b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.markdown-panel {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.markdown-panel h1,
+.markdown-panel h2,
+.markdown-panel h3 {
+  margin-top: 0;
+}
+
+.markdown-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.markdown-panel th,
+.markdown-panel td {
+  border: 1px solid #e5e7eb;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
