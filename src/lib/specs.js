@@ -32,7 +32,10 @@ const menuStructure = [
   },
   { title: 'Receipt Scanner', children: ['Manage & Verify & Fraud', 'OCR Sampling Check'] },
   { title: 'Media & Content', children: ['Inspiring Catalog', 'Knowledge Base'] },
-  { title: 'Settings', children: ['Admin Management', 'External link settings', 'Consent Management'] },
+  {
+    title: 'Settings',
+    children: ['Admin Management', 'External link settings', 'Consent Management', 'Form Builder', 'Table Builder'],
+  },
 ]
 
 const userMenu = [

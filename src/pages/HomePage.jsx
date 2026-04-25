@@ -1,5 +1,6 @@
-import { Card, Group, SimpleGrid, Text, Title } from '@mantine/core'
+import { Button, Card, Group, SimpleGrid, Text, Title } from '@mantine/core'
 import { IconActivity, IconChartBar, IconShield, IconUsers } from '@tabler/icons-react'
+import { Link } from 'react-router-dom'
 
 const stats = [
   { label: 'Total users', value: '24,891', icon: IconUsers },
@@ -34,6 +35,20 @@ function HomePage() {
           )
         })}
       </SimpleGrid>
+
+      <Card withBorder radius="md" p="lg" mt="md">
+        <Group justify="space-between" align="center">
+          <div>
+            <Title order={4}>DataTable Builder</Title>
+            <Text c="dimmed" size="sm">
+              Configure table.md content with a form builder and get markdown output instantly.
+            </Text>
+          </div>
+          <Button component={Link} to="/settings/table-builder/detail">
+            Open Builder
+          </Button>
+        </Group>
+      </Card>
     </div>
   )
 }

@@ -32,6 +32,8 @@ import P16List from '../pages/modules/settings/consent-management/ListPage'
 import P16Detail from '../pages/modules/settings/consent-management/DetailPage'
 import P17List from '../pages/modules/settings/external-link-settings/ListPage'
 import P17Detail from '../pages/modules/settings/external-link-settings/DetailPage'
+import P25Detail from '../pages/modules/settings/form-builder/DetailPage'
+import DataTableBuilderPage from '../pages/DataTableBuilderPage'
 import P18List from '../pages/modules/user/agent-and-sub-agent-management/ListPage'
 import P18Detail from '../pages/modules/user/agent-and-sub-agent-management/DetailPage'
 import P19List from '../pages/modules/user/certification-management/ListPage'
@@ -233,6 +235,28 @@ export const pageRegistry = [
     hasReportView: false,
     ListComponent: P17List,
     DetailComponent: P17Detail,
+    ReportComponent: null,
+  },
+  {
+    section: "Settings",
+    title: "Form Builder",
+    route: "/settings/form-builder",
+    hasListView: false,
+    hasDetailView: true,
+    hasReportView: false,
+    ListComponent: null,
+    DetailComponent: P25Detail,
+    ReportComponent: null,
+  },
+  {
+    section: "Settings",
+    title: "Table Builder",
+    route: "/settings/table-builder",
+    hasListView: false,
+    hasDetailView: true,
+    hasReportView: false,
+    ListComponent: null,
+    DetailComponent: DataTableBuilderPage,
     ReportComponent: null,
   },
   {
