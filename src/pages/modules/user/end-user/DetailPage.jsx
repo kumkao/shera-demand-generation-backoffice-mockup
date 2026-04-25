@@ -1,69 +1,11 @@
-import { Button, Card, Grid, Group, Select, Stack, Switch, Text, TextInput, Title } from '@mantine/core'
-
-const sections = [
-  {
-    "title": "Page Profile",
-    "fields": []
-  },
-  {
-    "title": "Section 1: Primary Category Name - e.g., Basic Information",
-    "fields": [
-      {
-        "label": "Label Name",
-        "inputType": "Text/Number/Select",
-        "required": "Required/Opt",
-        "placeholder": "Hint text or Real data"
-      },
-      {
-        "label": "Label Name",
-        "inputType": "Date Picker/Toggle",
-        "required": "Required/Opt",
-        "placeholder": "Default State"
-      }
-    ]
-  },
-  {
-    "title": "Section 2: Secondary Category Name - e.g., Pricing & Inventory",
-    "fields": []
-  },
-  {
-    "title": "Section 3: Additional Info - e.g., Metadata or Logs",
-    "fields": []
-  },
-  {
-    "title": "Footer / Floating Actions",
-    "fields": []
-  }
-]
-
-function renderField(field, index) {
-  const label = field.label + ' (' + (field.required || 'Optional') + ')'
-  const type = (field.inputType || '').toLowerCase()
-
-  if (type.includes('select')) {
-    return (
-      <Select
-        key={field.label + index}
-        label={label}
-        data={['Option A', 'Option B', 'Option C']}
-        placeholder={field.placeholder || 'Select'}
-      />
-    )
-  }
-
-  if (type.includes('toggle')) {
-    return <Switch key={field.label + index} label={label} />
-  }
-
-  return <TextInput key={field.label + index} label={label} placeholder={field.placeholder || 'Enter value'} />
-}
+import { Badge, Button, Card, Grid, Group, Select, Stack, Text, TextInput, Title } from '@mantine/core'
 
 function Page({ selectedId }) {
   return (
     <Stack gap="md">
       <Group justify="space-between" align="center">
         <div>
-          <Title order={2}>End-user</Title>
+          <Title order={2}>View End-user detail</Title>
           <Text c="dimmed">Detail view from specs/pages/User/End-user/detail.md.</Text>
           <Text size="sm" c="dimmed">
             Record: {selectedId || 'No record selected'}
@@ -71,23 +13,105 @@ function Page({ selectedId }) {
         </div>
         <Group>
           <Button variant="default">Cancel</Button>
-          <Button>Save Changes</Button>
+          <Button color="red" variant="light">
+            Delete
+          </Button>
         </Group>
       </Group>
-      {sections.map((section) => (
-        <Card withBorder radius="md" p="md" key={section.title}>
-          <Stack gap="sm">
-            <Text fw={700}>{section.title}</Text>
-            <Grid>
-              {section.fields.map((field, index) => (
-                <Grid.Col key={section.title + field.label + index} span={{ base: 12, md: 6 }}>
-                  {renderField(field, index)}
-                </Grid.Col>
-              ))}
-            </Grid>
-          </Stack>
-        </Card>
-      ))}
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="sm">
+          <Text fw={700}>Section 1: Basic Information</Text>
+          <Grid>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="ID (Required)" value="U000123" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <Select label="Type (Required)" data={['Contractor', 'Technician', 'Designer']} value="Contractor" />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <Select label="Active (Required)" data={['Active', 'Inactive']} value="Active" />
+            </Grid.Col>
+          </Grid>
+        </Stack>
+      </Card>
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="sm">
+          <Text fw={700}>Section 2: Social Detail</Text>
+          <Grid>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <Group align="end" wrap="nowrap">
+                <TextInput label="LINE ID (Required)" value="@enduser_01" readOnly w="100%" />
+                <Badge variant="light" color="green" mb={5}>
+                  Linked
+                </Badge>
+              </Group>
+            </Grid.Col>
+          </Grid>
+        </Stack>
+      </Card>
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="sm">
+          <Text fw={700}>Section 3: Personal information</Text>
+          <Grid>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="Name (Required)" value="Suda" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="Last Name (Required)" value="Wong" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="Telephone (Required)" value="081-234-5678" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="Email (Required)" value="suda.wong@example.com" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 6 }}>
+              <TextInput label="Address (Required)" value="99 Sukhumvit Road" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 4 }}>
+              <TextInput label="Privince (Required)" value="Bangkok" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 4 }}>
+              <TextInput label="Distinct (Required)" value="Watthana" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 4 }}>
+              <TextInput label="Sub-distinct (Required)" value="Khlong Toei Nuea" readOnly />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 4 }}>
+              <TextInput label="Zipcode (Required)" value="10110" readOnly />
+            </Grid.Col>
+          </Grid>
+        </Stack>
+      </Card>
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="xs">
+          <Text fw={700}>Section 3: Additional Info</Text>
+          <Group justify="space-between">
+            <Text c="dimmed">Last Modified</Text>
+            <Text>Date in YYYY-MM-DD HH:mm:ss</Text>
+          </Group>
+          <Group justify="space-between">
+            <Text c="dimmed">Registered Date</Text>
+            <Text>Date in YYYY-MM-DD HH:mm:ss</Text>
+          </Group>
+        </Stack>
+      </Card>
+
+      <Card withBorder radius="md" p="md">
+        <Group justify="space-between" align="center">
+          <Button color="red" variant="light">
+            Delete
+          </Button>
+          <Group>
+            <Button variant="default">Cancel</Button>
+            <Button>Submit</Button>
+          </Group>
+        </Group>
+      </Card>
     </Stack>
   )
 }

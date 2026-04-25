@@ -2,27 +2,22 @@ import { Badge, Button, Card, Group, Stack, Text, TextInput, Title } from '@mant
 import { DataTable } from 'mantine-datatable'
 
 const columns = [
-  { accessor: 'col1', title: "Col Name" },
-  { accessor: 'col2', title: "Col Name" },
-  { accessor: 'col3', title: "Col Name" },
-  { accessor: 'col4', title: "Col Name" },
-  { accessor: 'col5', title: "Col Name" }
+  { accessor: 'familyName', title: 'Family Name' },
+  { accessor: 'subAgents', title: 'Sub-agents' },
+  { accessor: 'createdAt', title: 'Created At' },
+  { accessor: 'updatedAt', title: 'Updated At' },
+  { accessor: 'createdBy', title: 'Created By' }
 ]
 
 const records = Array.from({ length: 12 }).map((_, index) => {
-  const record = { id: index + 1 }
-
-  columns.forEach((column, colIndex) => {
-    if (colIndex === 0) {
-      record[column.accessor] = String(index + 1).padStart(4, '0')
-    } else if (column.title.toLowerCase().includes('status')) {
-      record[column.accessor] = index % 2 === 0 ? 'Active' : 'Pending'
-    } else {
-      record[column.accessor] = column.title + ' ' + (index + 1)
-    }
-  })
-
-  return record
+  return {
+    id: index + 1,
+    familyName: `Family ${String(index + 1).padStart(3, '0')}`,
+    subAgents: `Sub-agent ${(index % 5) + 1}`,
+    createdAt: `2026-01-${String((index % 28) + 1).padStart(2, '0')}`,
+    updatedAt: `2026-02-${String((index % 28) + 1).padStart(2, '0')}`,
+    createdBy: `User ${(index % 4) + 1}`,
+  }
 })
 
 function Page({ onOpenDetail }) {
@@ -33,12 +28,12 @@ function Page({ onOpenDetail }) {
           <Title order={2}>Sub-agent Family</Title>
           <Text c="dimmed">List view from specs/pages/User/Sub-agent Family/table.md.</Text>
         </div>
-        <Button>Primary Action</Button>
+        <Button>Add New Family</Button>
       </Group>
       <Card withBorder radius="md" p="md">
         <Group justify="space-between" mb="sm">
-          <TextInput label="Global Search" placeholder="Search..." style={{ flex: 1 }} />
-          <Badge variant="light">{records.length} rows</Badge>
+          <TextInput label="Search Label" placeholder="Search by Name or Sub-agent Name" style={{ flex: 1 }} />
+          <Badge variant="light">Total: 1,240 items | Selected: 0</Badge>
         </Group>
         <DataTable
           withTableBorder

@@ -1,34 +1,56 @@
 ## Page Profile
-- **Page Title:** [e.g., Create New Menu Item / Order Details #1029]
-- **Layout:** [e.g., 2-Column Split / Single Column Centered / Sidebar Layout]
-- **Primary Action:** [e.g., Save Changes / Publish / Print Receipt]
-- **Secondary Action:** [e.g., Cancel / Archive / Duplicate]
+- **Page Title:** [View Agent & Sub-agent detail]
+- **Layout:** [2-Column Split]
+- **Primary Action:** []
+- **Secondary Action:** [Cancel, Delete (Danger)]
 
 ---
 
-## Section 1: [Primary Category Name - e.g., Basic Information]
-*Description: Brief summary of what this section handles.*
+## Section 1: [Basic Information]
 
 | Field Label | Input Type | Requirement | Placeholder/Value |
 | :--- | :--- | :--- | :--- |
-| [Label Name] | [Text/Number/Select] | [Required/Opt] | [Hint text or Real data] |
-| [Label Name] | [Date Picker/Toggle] | [Required/Opt] | [Default State] |
+| [ID] | [Text] | [Required] | [Text] |
+| [Type] | [Select] | [Required] | [Badge/Pill Component] |
+| [Status] | [Text] | [Required] | [Select [Not Verified, Verified, Waiting For Approve]] |
+---
+
+## Section 2: [Social Detail]
+
+| Field Label | Input Type | Requirement | Placeholder/Value |
+| :--- | :--- | :--- | :--- |
+| [LINE ID] | [Text] | [Required] | [Badge/Pill Component] |
 
 ---
 
-## Section 2: [Secondary Category Name - e.g., Pricing & Inventory]
-*Use this for grouped data or advanced settings.*
+## Section 3: [Shop information]
 
-- **[Field Label]:** [Input Type: e.g., Currency Input] | Value: "0.00"
-- **[Field Label]:** [Input Type: e.g., Radio Group] | Options: [Option A, Option B]
-- **[Field Label]:** [Input Type: e.g., Multi-select] | "Select tags..."
+| Field Label | Input Type | Requirement | Placeholder/Value |
+| :--- | :--- | :--- | :--- |
+
+| [Image Preview] | [Image] | [Required] | [Image component] |
+| [Upload Image] | [File] | [Required] | [FileInput] |
+| [Name] | [Text] | [Required] | [Text] |
+| [Last Name] | [Text] | [Required] | [Text] |
+| [Shop Name] | [Text] | [Required] | [Text] |
+| [Branch] | [Text] | [Required] | [Text] |
+| [Owner Telephone] | [Text] | [Required] | [Text] |
+| [TAX ID] | [Text] | [Required] | [Text] |
+| [Email] | [Text] | [Required] | [Text] |
+| [Address] | [Text] | [Required] | [Text] |
+| [Privince] | [Text] | [Required] | [Text] |
+| [Distinct] | [Text] | [Required] | [Text] |
+| [Sub-distinct] | [Text] | [Required] | [Text] |
+| [Zipcode] | [Text] | [Required] | [Text] |
+| [Latitude/Longitude] | [Text] | [Required] | [Text + Map image] |
+| [Map Preview] | [Image] | [Required] | [Sample map image] |
 
 ---
 
-## Section 3: [Additional Info - e.g., Metadata or Logs]
-- **Created By:** [System Label]
-- **Last Modified:** [Timestamp]
-- **Status:** [Status Badge: e.g., Active / Draft]
+## Section 3: [Additional Info]
+- **Created By:** [User Name]
+- **Last Modified:** [Date in YYYY-MM-DD HH:mm:ss]
+- **Created Date:** [Date in YYYY-MM-DD HH:mm:ss]
 
 ---
 
