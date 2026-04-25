@@ -30,3 +30,6 @@
 ## Admin Management
 ## External link settings
 ## Consent Management
+# Builder
+## Form Builder
+## Table Builder

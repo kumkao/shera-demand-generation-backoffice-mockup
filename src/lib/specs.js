@@ -34,7 +34,11 @@ const menuStructure = [
   { title: 'Media & Content', children: ['Inspiring Catalog', 'Knowledge Base'] },
   {
     title: 'Settings',
-    children: ['Admin Management', 'External link settings', 'Consent Management', 'Form Builder', 'Table Builder'],
+    children: ['Admin Management', 'External link settings', 'Consent Management'],
+  },
+  {
+    title: 'Builder',
+    children: ['Form Builder', 'Table Builder'],
   },
 ]
 

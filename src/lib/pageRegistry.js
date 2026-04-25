@@ -238,7 +238,7 @@ export const pageRegistry = [
     ReportComponent: null,
   },
   {
-    section: "Settings",
+    section: "Builder",
     title: "Form Builder",
     route: "/settings/form-builder",
     hasListView: false,
@@ -249,7 +249,7 @@ export const pageRegistry = [
     ReportComponent: null,
   },
   {
-    section: "Settings",
+    section: "Builder",
     title: "Table Builder",
     route: "/settings/table-builder",
     hasListView: false,
