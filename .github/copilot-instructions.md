@@ -31,6 +31,7 @@
   - Search Box -> Mantine TextInput with left search icon
   - DateRange -> Mantine DatePickerInput (https://mantine.dev/dates/date-picker-input/#dates-range)
   - DateRangeWithPreset -> Mantine DatePickerInput (https://mantine.dev/dates/date-picker-input/#presets)
+  - Table with row dragging -> Mantine with dragging column (https://icflorescu.github.io/mantine-datatable/examples/row-dragging/)
 - in table.md, Secondary Actions is the action in single dropdown
 - in table.md, Primary Filters must shrink to right and let searchbox expand to full width
 
@@ -40,3 +41,6 @@
 - User menu spec: specs/user-menu.md
 - Page templates: specs/page-templates/table.md, specs/page-templates/detail.md, specs/page-templates/report.md
 - Generated page script: scripts/generate-pages-from-specs.cjs
+
+##
+- LLM response in short text, no summary

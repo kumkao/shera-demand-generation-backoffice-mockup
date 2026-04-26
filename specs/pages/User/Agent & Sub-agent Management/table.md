@@ -6,7 +6,7 @@
 ---
 
 ## Utility Bar (Filters & Search)
-- **Global Search:** [Label: [Search Label]] [Placeholder: Search by Name or Phone]
+- **Search:** [Label: [Search Label]] [Placeholder: Search by Name or Phone]
 - **Primary Filters:**
 - Status: [Type: Select] [Config: Not Verified,Verified,Waiting For Approve]
 - Registered Date: [Type: DatePickerInput] [Config: Range]

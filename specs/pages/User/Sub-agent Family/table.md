@@ -6,7 +6,7 @@
 ---
 
 ## Utility Bar (Filters & Search)
-- **Global Search:** [Label: [Search Label]] [Placeholder: Search by Name or Sub-agent Name]
+- **Search:** [Label: [Search Label]] [Placeholder: Search by Name or Sub-agent Name]
 - **Primary Filters:**
 []
 - **Secondary Actions:**

@@ -5,7 +5,7 @@
 ---
 
 ## Utility Bar (Filters & Search)
-- **Global Search:** [Placeholder text, e.g., "Search by ID or Name..."]
+- **Search:** [Placeholder text, e.g., "Search by ID or Name..."]
 - **Primary Filters:** - [Filter 1 Label]: [Type: e.g., Single-select Dropdown]
     - [Filter 2 Label]: [Type: e.g., Date Range Picker]
 - **Secondary Actions:** [e.g., Export CSV, Print, Refresh]

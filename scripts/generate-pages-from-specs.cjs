@@ -115,7 +115,7 @@ function Page({ onOpenDetail }) {
       </Group>
       <Card withBorder radius="md" p="md">
         <Group justify="space-between" mb="sm">
-          <TextInput label="Global Search" placeholder="Search..." style={{ flex: 1 }} />
+          <TextInput label="Search" placeholder="Search..." style={{ flex: 1 }} />
           <Badge variant="light">{records.length} rows</Badge>
         </Group>
         <DataTable

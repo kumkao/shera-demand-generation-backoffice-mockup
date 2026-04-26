@@ -701,7 +701,7 @@ ${asBulletList(primaryActionLines)}
 ---
 
 ## Utility Bar (Filters & Search)
-- **Global Search:** [Label: ${globalSearchLabel}] [Placeholder: ${globalSearchPlaceholder}]
+- **Search:** [Label: ${globalSearchLabel}] [Placeholder: ${globalSearchPlaceholder}]
 - **Primary Filters:**
 ${asBulletList(primaryFilterLines)}
 - **Secondary Actions:**
@@ -778,8 +778,8 @@ ${asBulletList(actionLines)}`
             </Text>
             <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="sm">
               <TextInput
-                label="Global Search Label"
-                placeholder="Global Search"
+                label="Search Label"
+                placeholder="Search"
                 value={builder.utilityBar.globalSearch.label}
                 onChange={(event) =>
                   setBuilder((prev) => ({
@@ -795,7 +795,7 @@ ${asBulletList(actionLines)}`
                 }
               />
               <TextInput
-                label="Global Search Placeholder"
+                label="Search Placeholder"
                 placeholder="Search by ID or Name..."
                 value={builder.utilityBar.globalSearch.placeholder}
                 onChange={(event) =>

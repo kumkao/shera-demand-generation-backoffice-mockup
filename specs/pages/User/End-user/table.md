@@ -29,7 +29,7 @@
 
 ## Row Actions
 *What happens when a user interacts with a specific row?*
-- **Primary Hover Action:** [e.g., View]
+- **Primary Hover Action:** [View]
 - **Menu Items:** [Duplicate, [Active/Inactive], Delete (Danger)]
 
 ---
