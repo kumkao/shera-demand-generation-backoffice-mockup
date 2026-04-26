@@ -1,5 +1,5 @@
 ## Page Profile
-- **Page Title:** [Sub-agent detail]
+- **Page Title:** [Sub-agent Family detail]
 - **Layout:** 2-Column Split
 - **Primary Action:** Cancel
 - **Secondary Action:** Submit
@@ -24,5 +24,6 @@
 ---
 
 ### Action Buttons Configuration
+- **Delete:** Attributes: type=button, disabled=false | Styles: variant=default, color=red, size=sm
 - **Cancel:** Attributes: type=button, disabled=false | Styles: variant=default, color=gray, size=sm
 - **Submit:** Attributes: type=button, disabled=false | Styles: variant=filled, color=blue, size=sm

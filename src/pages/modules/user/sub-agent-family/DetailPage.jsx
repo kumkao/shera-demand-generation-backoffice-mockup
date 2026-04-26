@@ -37,13 +37,16 @@ function Page({ selectedId }) {
     <Stack gap="md">
       <Group justify="space-between" align="center">
         <div>
-          <Title order={2}>Sub-agent detail</Title>
+          <Title order={2}>Sub-agent Family detail</Title>
           <Text c="dimmed">Detail view from specs/pages/User/Sub-agent Family/detail.md.</Text>
           <Text size="sm" c="dimmed">
             Record: {selectedId || 'No record selected'}
           </Text>
         </div>
         <Group>
+          <Button type="button" variant="default" color="red" size="sm">
+            Delete
+          </Button>
           <Button type="button" variant="default" color="gray" size="sm">
             Cancel
           </Button>
