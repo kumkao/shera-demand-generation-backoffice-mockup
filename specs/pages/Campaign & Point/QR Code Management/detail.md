@@ -1,34 +1,30 @@
 ## Page Profile
-- **Page Title:** [e.g., Create New Menu Item / Order Details #1029]
-- **Layout:** [e.g., 2-Column Split / Single Column Centered / Sidebar Layout]
-- **Primary Action:** [e.g., Save Changes / Publish / Print Receipt]
-- **Secondary Action:** [e.g., Cancel / Archive / Duplicate]
+- **Page Title:** [QR Code Details #1029]
+- **Layout:** [2-Column Split]
+- **Primary Action:** [Print QRCode, Download QRCode]
+- **Secondary Action:** [Cancel]
 
 ---
 
-## Section 1: [Primary Category Name - e.g., Basic Information]
+## Section 1: [Basic Information]
 *Description: Brief summary of what this section handles.*
 
 | Field Label | Input Type | Requirement | Placeholder/Value |
 | :--- | :--- | :--- | :--- |
-| [Label Name] | [Text/Number/Select] | [Required/Opt] | [Hint text or Real data] |
-| [Label Name] | [Date Picker/Toggle] | [Required/Opt] | [Default State] |
+| [Name] | [Text] | [Required] |  |
+| [QRCode Preview] | [QRCode Image] | [Required] | random QR Code Image |
+| QRCode Value | [Text] | [Required] | [Default Value: Random Characters and Numbers] |
+| Link to Reward | [Select] | [Required] | Autoselect of Reward List |  | 
+| Link to Custom Link | [Text] | [Required] | Scan to open Link |
+| Expired At | [Date] | [Required] | DatePicker |
+| Active | [Text] | [Required] | Select [Active,Inactive] |
 
 ---
 
-## Section 2: [Secondary Category Name - e.g., Pricing & Inventory]
-*Use this for grouped data or advanced settings.*
-
-- **[Field Label]:** [Input Type: e.g., Currency Input] | Value: "0.00"
-- **[Field Label]:** [Input Type: e.g., Radio Group] | Options: [Option A, Option B]
-- **[Field Label]:** [Input Type: e.g., Multi-select] | "Select tags..."
-
----
-
-## Section 3: [Additional Info - e.g., Metadata or Logs]
+## Section 2: [Additional Info]
 - **Created By:** [System Label]
 - **Last Modified:** [Timestamp]
-- **Status:** [Status Badge: e.g., Active / Draft]
+- **Created Date:** [Date in YYYY-MM-DD HH:mm:ss]
 
 ---
 
