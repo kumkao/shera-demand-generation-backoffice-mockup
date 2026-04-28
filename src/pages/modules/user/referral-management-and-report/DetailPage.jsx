@@ -1,93 +1,100 @@
-import { Button, Card, Grid, Group, Select, Stack, Switch, Text, TextInput, Title } from '@mantine/core'
+import { Badge, Button, Card, Group, Stack, Text, Title } from '@mantine/core'
+import { DataTable } from 'mantine-datatable'
 
-const sections = [
+const childrenRecords = [
   {
-    "title": "Page Profile",
-    "fields": []
+    id: 1,
+    username: 'Alex Martin',
+    joinedDate: '2026-03-12',
   },
   {
-    "title": "Section 1: Primary Category Name - e.g., Basic Information",
-    "fields": [
-      {
-        "label": "Label Name",
-        "inputType": "Text/Number/Select",
-        "required": "Required/Opt",
-        "placeholder": "Hint text or Real data"
-      },
-      {
-        "label": "Label Name",
-        "inputType": "Date Picker/Toggle",
-        "required": "Required/Opt",
-        "placeholder": "Default State"
-      }
-    ]
+    id: 2,
+    username: 'Jamie Collins',
+    joinedDate: '2026-03-20',
   },
   {
-    "title": "Section 2: Secondary Category Name - e.g., Pricing & Inventory",
-    "fields": []
+    id: 3,
+    username: 'Taylor Brooks',
+    joinedDate: '2026-04-02',
   },
-  {
-    "title": "Section 3: Additional Info - e.g., Metadata or Logs",
-    "fields": []
-  },
-  {
-    "title": "Footer / Floating Actions",
-    "fields": []
-  }
 ]
 
-function renderField(field, index) {
-  const label = field.label + ' (' + (field.required || 'Optional') + ')'
-  const type = (field.inputType || '').toLowerCase()
-
-  if (type.includes('select')) {
-    return (
-      <Select
-        key={field.label + index}
-        label={label}
-        data={['Option A', 'Option B', 'Option C']}
-        placeholder={field.placeholder || 'Select'}
-      />
-    )
-  }
-
-  if (type.includes('toggle')) {
-    return <Switch key={field.label + index} label={label} />
-  }
-
-  return <TextInput key={field.label + index} label={label} placeholder={field.placeholder || 'Enter value'} />
+function ReadOnlyRow({ label, value }) {
+  return (
+    <Group justify="space-between" align="flex-start" gap="xl" wrap="nowrap">
+      <Text c="dimmed" maw={260}>
+        {label}
+      </Text>
+      <Text fw={500} ta="right">
+        {value}
+      </Text>
+    </Group>
+  )
 }
 
 function Page({ selectedId }) {
+  const columns = [
+    { accessor: 'username', title: 'User Name' },
+    { accessor: 'joinedDate', title: 'Joined Date' },
+  ]
+
   return (
-    <Stack gap="md">
+    <Stack gap="md" maw={980} mx="auto" w="100%">
       <Group justify="space-between" align="center">
         <div>
-          <Title order={2}>Referral management & Report</Title>
-          <Text c="dimmed">Detail view from specs/pages/User/Referral management & Report/detail.md.</Text>
-          <Text size="sm" c="dimmed">
-            Record: {selectedId || 'No record selected'}
-          </Text>
+          <Title order={2}>Referral Record Details</Title>
         </div>
-        <Group>
-          <Button variant="default">Cancel</Button>
-          <Button>Save Changes</Button>
-        </Group>
       </Group>
-      {sections.map((section) => (
-        <Card withBorder radius="md" p="md" key={section.title}>
-          <Stack gap="sm">
-            <Text fw={700}>{section.title}</Text>
-            <Grid>
-              {section.fields.map((field, index) => (
-                <Grid.Col key={section.title + field.label + index} span={{ base: 12, md: 6 }}>
-                  {renderField(field, index)}
-                </Grid.Col>
-              ))}
-            </Grid>
-          </Stack>
-        </Card>
-      ))}
+
+        <Stack gap="sm">
+          <Title order={3}>Referral performance summary.</Title>
+          <Group grow align="stretch">
+            <Card withBorder radius="md" p="md">
+              <Text size="sm" c="dimmed">
+                Total Earned Point
+              </Text>
+              <Text fw={700} size="xl">
+                1,000
+              </Text>
+            </Card>
+            <Card withBorder radius="md" p="md">
+              <Text size="sm" c="dimmed">
+                Referred Count
+              </Text>
+              <Text fw={700} size="xl">
+                3
+              </Text>
+            </Card>
+          </Group>
+        </Stack>
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="sm">
+          <Text fw={700}>Section 1: Referrer Information</Text>
+          <Text size="sm" c="dimmed">
+            Basic read-only information of the selected referrer.
+          </Text>
+          <ReadOnlyRow label="User Full Name" value="John Smith" />
+          <ReadOnlyRow label="User Type" value={<Badge variant="light">End-user / Sub-agent</Badge>} />
+          <ReadOnlyRow label="Referral Code" value="XC45UGA8" />
+        </Stack>
+      </Card>
+
+      <Card withBorder radius="md" p="md">
+        <Stack gap="sm">
+          <Text fw={700}>Referred List</Text>
+          <DataTable
+            withTableBorder
+            withColumnBorders
+            striped
+            idAccessor="id"
+            records={childrenRecords}
+            columns={columns}
+            minHeight={240}
+          />
+        </Stack>
+      </Card>
+
     </Stack>
   )
 }

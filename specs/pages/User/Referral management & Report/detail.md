@@ -1,37 +1,39 @@
 ## Page Profile
-- **Page Title:** [e.g., Create New Menu Item / Order Details #1029]
-- **Layout:** [e.g., 2-Column Split / Single Column Centered / Sidebar Layout]
-- **Primary Action:** [e.g., Save Changes / Publish / Print Receipt]
-- **Secondary Action:** [e.g., Cancel / Archive / Duplicate]
+- **Page Title:** Referral Record Details
+- **Layout:** Single Column Centered
+- **Primary Action:** Back to List
+- **Secondary Action:** None (View Only)
 
 ---
 
-## Section 1: [Primary Category Name - e.g., Basic Information]
-*Description: Brief summary of what this section handles.*
+## Section 1: Referrer Information
+*Description: Basic read-only information of the selected referrer.*
 
 | Field Label | Input Type | Requirement | Placeholder/Value |
 | :--- | :--- | :--- | :--- |
-| [Label Name] | [Text/Number/Select] | [Required/Opt] | [Hint text or Real data] |
-| [Label Name] | [Date Picker/Toggle] | [Required/Opt] | [Default State] |
+| User Full Name | Read-only Text | Required | First Name + Last Name |
+| User Type | Read-only Badge | Required | End-user / Sub-agent |
+| Referral Code | Read-only Text | Required | REF-XXXXXX |
 
 ---
 
-## Section 2: [Secondary Category Name - e.g., Pricing & Inventory]
-*Use this for grouped data or advanced settings.*
+## Section 2: Basic Stats
+*Use this section to display referral performance summary.*
 
-- **[Field Label]:** [Input Type: e.g., Currency Input] | Value: "0.00"
-- **[Field Label]:** [Input Type: e.g., Radio Group] | Options: [Option A, Option B]
-- **[Field Label]:** [Input Type: e.g., Multi-select] | "Select tags..."
+- **Total Earned Point:** Read-only Number | Value: "0"
+- **Referred Count:** Read-only Number | Value: "0"
+- **Active Referred Children:** Read-only Number | Value: "0"
 
 ---
 
-## Section 3: [Additional Info - e.g., Metadata or Logs]
-- **Created By:** [System Label]
-- **Last Modified:** [Timestamp]
-- **Status:** [Status Badge: e.g., Active / Draft]
+## Section 3: Referred Children List
+- **Purpose:** Show the list of child users who used this user's referral code.
+- **Display Type:** Read-only Table
+- **Columns:** Child User Name, Child User Type, Joined Date, Status
+- **Row Interaction:** View only (no edit, no delete, no duplicate)
 
 ---
 
 ## Footer / Floating Actions
-- [Left Side]: [Delete Button (Danger Style)]
-- [Right Side]: [Cancel Button] [Submit Button (Primary Style)]
+- [Left Side]: None
+- [Right Side]: [Back to List Button]
