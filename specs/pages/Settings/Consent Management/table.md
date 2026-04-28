@@ -1,39 +1,41 @@
 ## Page Identity
-- **Page Title:** [e.g., Inventory Management / Order History]
-- **Primary Page Action:** [e.g., + Add New Item / Export To CSV]
+- **Page Title:** Consent Management
+- **Primary Page Action:** + Create New Consent
 
 ---
 
 ## Utility Bar (Filters & Search)
-- **Search:** [Placeholder text, e.g., "Search by ID or Name..."]
-- **Primary Filters:** - [Filter 1 Label]: [Type: e.g., Single-select Dropdown]
-    - [Filter 2 Label]: [Type: e.g., Date Range Picker]
-- **Secondary Actions:** [e.g., Export CSV, Print, Refresh]
+- **Search:** Search by consent title or version
+- **Primary Filters:**
+    - User Type: Single-select Dropdown (Agent, Sub-agent, End-user)
+    - Status: Single-select Dropdown (Active, Inactive)
+- **Secondary Actions:** Refresh
 
 ---
 
 ## Table Configuration
-- **Density:** [e.g., High / Comfortable]
-- **Row Selection:** [Yes/No - Checkboxes for bulk actions]
+- **Density:** Comfortable
+- **Row Selection:** No
 
 | Column Header | Data Type | Sortable | Alignment | Style/Component |
 | :--- | :--- | :--- | :--- | :--- |
-| [Col Name] | [e.g., String/ID] | [Yes/No] | [Left] | [Plain Text] |
-| [Col Name] | [e.g., Currency] | [Yes] | [Right] | [Monospace Font] |
-| [Col Name] | [e.g., Status] | [Yes] | [Center] | [Badge/Pill Component] |
-| [Col Name] | [e.g., Progress] | [No] | [Left] | [Progress Bar] |
-| [Col Name] | [e.g., User] | [No] | [Left] | [Avatar + Name] |
+| Consent Title | String | Yes | Left | Plain Text |
+| User Type | Enum | Yes | Left | Badge/Pill (Agent, Sub-agent, End-user) |
+| Consent Version | String | Yes | Left | Monospace Font |
+| Status | Enum | Yes | Center | Badge/Pill (Active, Inactive) |
+| Last Updated | Datetime | Yes | Left | Plain Text |
 
 ---
 
 ## Row Actions
 *What happens when a user interacts with a specific row?*
-- **Primary Hover Action:** [e.g., Quick Edit]
-- **Menu Items:** [e.g., View Details, Duplicate, Archive, Delete (Danger)]
+- **Primary Hover Action:** View Details
+- **Menu Items:** View Details, Edit, Set as Active
+- **Activation Rule:** Only one consent can be Active for each user type. Setting one record to Active will auto-set other Active records of the same user type to Inactive.
 
 ---
 
 ## Footer & Pagination
-- **Pagination Type:** [e.g., Numbered Pages / Infinite Scroll]
-- **Items Per Page:** [e.g., 10, 25, 50, 100]
-- **Summary Stats:** [e.g., Total: 1,240 items | Selected: 0]
+- **Pagination Type:** Numbered Pages
+- **Items Per Page:** 10, 25, 50, 100
+- **Summary Stats:** Total consents: [count] | Active by type: Agent [count], Sub-agent [count], End-user [count]

@@ -1,37 +1,41 @@
 ## Page Profile
-- **Page Title:** [e.g., Create New Menu Item / Order Details #1029]
-- **Layout:** [e.g., 2-Column Split / Single Column Centered / Sidebar Layout]
-- **Primary Action:** [e.g., Save Changes / Publish / Print Receipt]
-- **Secondary Action:** [e.g., Cancel / Archive / Duplicate]
+- **Page Title:** Consent Details
+- **Layout:** Single Column Centered
+- **Primary Action:** Save Consent
+- **Secondary Action:** Cancel
 
 ---
 
-## Section 1: [Primary Category Name - e.g., Basic Information]
-*Description: Brief summary of what this section handles.*
+## Section 1: Consent Metadata
+*Description: Define consent identity and scope by user type.*
 
 | Field Label | Input Type | Requirement | Placeholder/Value |
 | :--- | :--- | :--- | :--- |
-| [Label Name] | [Text/Number/Select] | [Required/Opt] | [Hint text or Real data] |
-| [Label Name] | [Date Picker/Toggle] | [Required/Opt] | [Default State] |
+| Consent Title | Text | Required | e.g., PDPA Consent 2026 |
+| User Type | Select | Required | Agent / Sub-agent / End-user |
+| Consent Version | Text | Required | e.g., v1.0.0 (Must be unique per selected User Type) |
+| Status | Toggle | Required | Active / Inactive |
 
 ---
 
-## Section 2: [Secondary Category Name - e.g., Pricing & Inventory]
-*Use this for grouped data or advanced settings.*
+## Section 2: Consent Content
+*Use this section to compose and format consent text.*
 
-- **[Field Label]:** [Input Type: e.g., Currency Input] | Value: "0.00"
-- **[Field Label]:** [Input Type: e.g., Radio Group] | Options: [Option A, Option B]
-- **[Field Label]:** [Input Type: e.g., Multi-select] | "Select tags..."
+- **Content Editor:** WYSIWYG Rich Text Editor | Required
+- **Supported Formatting:** Heading, Bold, Italic, Underline, Ordered List, Unordered List, Link
+- **Preview:** Inline preview from the same editor content
 
 ---
 
-## Section 3: [Additional Info - e.g., Metadata or Logs]
+## Section 3: Validation Rules & Audit
+- **Unique Version Rule:** On create, Consent Version must be unique within the selected User Type.
+- **Single Active Rule:** Only one Active consent is allowed for each User Type (Agent, Sub-agent, End-user).
+- **Activation Behavior:** If Status is set to Active and another Active consent exists for the same User Type, system auto-deactivates the previous one after confirmation.
 - **Created By:** [System Label]
 - **Last Modified:** [Timestamp]
-- **Status:** [Status Badge: e.g., Active / Draft]
 
 ---
 
 ## Footer / Floating Actions
-- [Left Side]: [Delete Button (Danger Style)]
-- [Right Side]: [Cancel Button] [Submit Button (Primary Style)]
+- [Left Side]: None
+- [Right Side]: [Cancel Button] [Save Consent Button (Primary Style)]

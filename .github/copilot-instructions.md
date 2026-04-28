@@ -32,6 +32,7 @@
   - DateRange -> Mantine DatePickerInput (https://mantine.dev/dates/date-picker-input/#dates-range)
   - DateRangeWithPreset -> Mantine DatePickerInput (https://mantine.dev/dates/date-picker-input/#presets)
   - Table with row dragging -> Mantine with dragging column (https://icflorescu.github.io/mantine-datatable/examples/row-dragging/)
+  - WYSIWYG -> Tiptap (https://mantine.dev/x/tiptap/)
 - in table.md, Secondary Actions is the action in single dropdown
 - in table.md, Primary Filters must shrink to right and let searchbox expand to full width
 

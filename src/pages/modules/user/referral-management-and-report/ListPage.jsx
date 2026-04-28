@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Badge, Button, Card, Group, Select, Stack, Text, TextInput, Title } from '@mantine/core'
-import { IconRefresh, IconSearch } from '@tabler/icons-react'
+import { IconSearch } from '@tabler/icons-react'
 import { DataTable } from 'mantine-datatable'
 
 const allRecords = Array.from({ length: 1240 }).map((_, index) => {
